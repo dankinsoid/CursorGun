@@ -5,8 +5,8 @@ import * as vscode from 'vscode';
 // Decoration type for cursor previews
 const cursorPreviewDecoration = vscode.window.createTextEditorDecorationType({
     backgroundColor: new vscode.ThemeColor('editor.selectionBackground'),
-    borderRadius: '1px',
-    width: '2px !important'
+    border: '1px solid',
+    borderColor: new vscode.ThemeColor('editor.selectionBackground')
 });
 
 interface BracketPair {
