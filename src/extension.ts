@@ -102,21 +102,15 @@ export function activate(context: vscode.ExtensionContext) {
         const editor = vscode.window.activeTextEditor;
         if (!editor) return;
 
-        const char = await new Promise<string>(resolve => {
-            const disposable = vscode.workspace.onDidChangeTextDocument(e => {
-                if (e.contentChanges.length > 0) {
-                    const change = e.contentChanges[0];
-                    disposable.dispose();
-                    editor.edit(editBuilder => {
-                        editBuilder.delete(change.range);
-                    }).then(() => {
-                        resolve(change.text);
-                    });
-                }
-            });
+        const char = await vscode.window.showInputBox({
+            prompt: "Enter character to match",
+            placeHolder: "Single character",
+            validateInput: text => {
+                return text.length === 1 ? null : "Please enter exactly one character";
+            }
         });
 
-        if (!char) return;
+        if (!char || char.length !== 1) return;
 
         const text = editor.document.getText(editor.selection) || editor.document.getText();
         const selections: vscode.Selection[] = [];
