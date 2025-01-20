@@ -68,6 +68,5 @@ All commands can be run from the Command Palette (`Ctrl+Shift+P` or `Cmd+Shift+P
 - `Alt+/`: Add cursors at regex matches
 - `Alt+Shift+/`: Select all regex matches
 - `Alt+f`: Add cursors at character matches
-- `Alt+i`: Add cursors inside brackets
 
 Additional shortcuts can be configured in VSCode's Keyboard Shortcuts settings.

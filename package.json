@@ -3,7 +3,7 @@
   "displayName": "CursorGun",
   "description": "Effortlessly insert multiple cursors",
   "version": "0.0.1",
-  "icon": "icon.svg",
+  "icon": "cursor-gun-icon-v6.png",
   "engines": {
     "vscode": "^1.96.0"
   },
