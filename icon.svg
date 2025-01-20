@@ -1,0 +1,22 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+    <!-- Gun handle -->
+    <path d="M 30,80 L 30,110 L 50,110 L 50,90 L 30,80" 
+          fill="#424242" stroke="#2b2b2b" stroke-width="2"/>
+    
+    <!-- Gun body -->
+    <path d="M 25,75 L 90,75 L 100,65 L 100,45 L 90,35 L 25,35 L 25,75"
+          fill="#424242" stroke="#2b2b2b" stroke-width="2"/>
+    
+    <!-- Cursor beams -->
+    <g stroke="#007ACC" stroke-width="2">
+        <!-- Multiple cursor lines -->
+        <line x1="100" y1="45" x2="120" y2="25" />
+        <line x1="100" y1="55" x2="120" y2="45" />
+        <line x1="100" y1="65" x2="120" y2="65" />
+        
+        <!-- Cursor symbols -->
+        <path d="M 118,23 L 122,23 L 122,27 L 118,27 Z" fill="#007ACC"/>
+        <path d="M 118,43 L 122,43 L 122,47 L 118,47 Z" fill="#007ACC"/>
+        <path d="M 118,63 L 122,63 L 122,67 L 118,67 Z" fill="#007ACC"/>
+    </g>
+</svg>
