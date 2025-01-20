@@ -2,6 +2,13 @@
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 
+// Decoration type for cursor previews
+const cursorPreviewDecoration = vscode.window.createTextEditorDecorationType({
+    backgroundColor: new vscode.ThemeColor('editor.selectionBackground'),
+    borderRadius: '1px',
+    width: '2px !important'
+});
+
 interface BracketPair {
     open: string;
     close: string;
@@ -24,9 +31,45 @@ export function activate(context: vscode.ExtensionContext) {
         const editor = vscode.window.activeTextEditor;
         if (!editor) return;
 
-        const pattern = await vscode.window.showInputBox({
-            prompt: "Enter regex pattern"
+        const inputBox = vscode.window.createInputBox();
+        inputBox.prompt = "Enter regex pattern";
+        
+        // Update previews as user types
+        inputBox.onDidChangeValue(pattern => {
+            try {
+                if (!pattern) {
+                    editor.setDecorations(cursorPreviewDecoration, []);
+                    return;
+                }
+
+                const regex = new RegExp(pattern, 'g');
+                const text = editor.document.getText(editor.selection) || editor.document.getText();
+                const ranges: vscode.Range[] = [];
+                const startOffset = editor.selection.isEmpty ? 0 : editor.document.offsetAt(editor.selection.start);
+                
+                let match;
+                while ((match = regex.exec(text)) !== null) {
+                    const pos = editor.document.positionAt(startOffset + match.index);
+                    ranges.push(new vscode.Range(pos, pos.translate(0, 1)));
+                }
+
+                editor.setDecorations(cursorPreviewDecoration, ranges);
+            } catch (e) {
+                // Invalid regex - clear previews
+                editor.setDecorations(cursorPreviewDecoration, []);
+            }
         });
+
+        // Handle accept/cancel
+        const pattern = await new Promise<string | undefined>(resolve => {
+            inputBox.onDidAccept(() => resolve(inputBox.value));
+            inputBox.onDidHide(() => resolve(undefined));
+            inputBox.show();
+        });
+
+        // Clear previews
+        editor.setDecorations(cursorPreviewDecoration, []);
+        
         if (!pattern) return;
 
         try {
