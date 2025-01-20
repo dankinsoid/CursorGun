@@ -191,12 +191,9 @@ export function activate(context: vscode.ExtensionContext) {
         addCursorsInsideBrackets,
         addCursorsAroundBrackets
     );
-		// The code you place here will be executed every time your command is executed
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from CursorGun!');
-	});
 
-	context.subscriptions.push(disposable);
+    // Display a welcome message
+    vscode.window.showInformationMessage('CursorGun is now active!');
 }
 
 // This method is called when your extension is deactivated
