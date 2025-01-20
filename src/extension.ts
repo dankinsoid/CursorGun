@@ -105,7 +105,7 @@ export function activate(context: vscode.ExtensionContext) {
         const char = await new Promise<string | undefined>(resolve => {
             const inputBox = vscode.window.createInputBox();
             inputBox.prompt = "Enter character to match";
-            inputBox.placeHolder = "Single character";
+            inputBox.placeholder = "Single character";
             
             inputBox.onDidChangeValue(text => {
                 if (text.length === 1) {
