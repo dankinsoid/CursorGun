@@ -26,10 +26,6 @@
         "title": "CursorGun: Add Cursors at Word Start"
       },
       {
-        "command": "cursorgun.addCursorsAtWordEnd",
-        "title": "CursorGun: Add Cursors at Word End"
-      },
-      {
         "command": "cursorgun.addCursorsAroundWord",
         "title": "CursorGun: Add Cursors Around Word"
       },
