@@ -33,6 +33,7 @@ export function activate(context: vscode.ExtensionContext) {
 
         const inputBox = vscode.window.createInputBox();
         inputBox.prompt = "Enter regex pattern";
+        inputBox.ignoreFocusOut = true;
         
         // Update previews as user types
         inputBox.onDidChangeValue(pattern => {
