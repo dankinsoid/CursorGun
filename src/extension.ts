@@ -205,6 +205,10 @@ export function activate(context: vscode.ExtensionContext) {
                     new vscode.Selection(
                         editor.document.positionAt(pair.start + 1),
                         editor.document.positionAt(pair.start + 1)
+                    ),
+                    new vscode.Selection(
+                        editor.document.positionAt(pair.end),
+                        editor.document.positionAt(pair.end)
                     )
                 ];
             }
