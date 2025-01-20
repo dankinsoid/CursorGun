@@ -14,8 +14,44 @@
   "contributes": {
     "commands": [
       {
-        "command": "cursorgun.helloWorld",
-        "title": "Hello World"
+        "command": "cursorgun.addCursorsAtRegex",
+        "title": "CursorGun: Add Cursors at Regex Matches"
+      },
+      {
+        "command": "cursorgun.addCursorsAtChar",
+        "title": "CursorGun: Add Cursors at Character"
+      },
+      {
+        "command": "cursorgun.addCursorsAtWordStart",
+        "title": "CursorGun: Add Cursors at Word Start"
+      },
+      {
+        "command": "cursorgun.addCursorsAtWordEnd",
+        "title": "CursorGun: Add Cursors at Word End"
+      },
+      {
+        "command": "cursorgun.addCursorsAroundWord",
+        "title": "CursorGun: Add Cursors Around Word"
+      },
+      {
+        "command": "cursorgun.addCursorsInsideBrackets",
+        "title": "CursorGun: Add Cursors Inside Brackets"
+      },
+      {
+        "command": "cursorgun.addCursorsAroundBrackets",
+        "title": "CursorGun: Add Cursors Around Brackets"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "cursorgun.addCursorsAtRegex",
+        "key": "alt+/",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "cursorgun.addCursorsAtChar",
+        "key": "alt+f",
+        "when": "editorTextFocus"
       }
     ]
   },
