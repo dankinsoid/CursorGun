@@ -3,6 +3,7 @@
   "displayName": "CursorGun",
   "description": "Effortlessly insert multiple cursors",
   "version": "1.0.0",
+  "publisher": "dankinsoid",
   "icon": "cursor-gun-icon-v6.png",
   "repository": {
     "type": "git",
