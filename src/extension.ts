@@ -63,7 +63,11 @@ export function activate(context: vscode.ExtensionContext) {
 
         // Handle accept/cancel
         const pattern = await new Promise<string | undefined>(resolve => {
-            inputBox.onDidAccept(() => resolve(inputBox.value));
+            inputBox.onDidAccept(() => {
+                const value = inputBox.value;
+                inputBox.hide();
+                resolve(value);
+            });
             inputBox.onDidHide(() => resolve(undefined));
             inputBox.show();
         });
