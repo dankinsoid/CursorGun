@@ -11,7 +11,7 @@ A VSCode extension that provides powerful multiple cursor capabilities with intu
 
 ### Smart Cursor Placement
 - **Add Cursors Around Word**: Add cursors at the start and end of the current word
-- **Add Cursors Inside Brackets** (`Alt+i`): Add cursors inside the nearest brackets/quotes
+- **Add Cursors Inside Brackets**: Add cursors inside the nearest brackets/quotes
 - **Add Cursors Around Brackets**: Add cursors around the nearest brackets/quotes
 
 ### Selection Scope
