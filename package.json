@@ -2,11 +2,11 @@
   "name": "cursorgun",
   "displayName": "CursorGun",
   "description": "Effortlessly insert multiple cursors",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "icon": "cursor-gun-icon-v6.png",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/cursorgun.git"
+    "url": "https://github.com/dankinsoid/cursorgun.git"
   },
   "engines": {
     "vscode": "^1.96.0"
