@@ -48,6 +48,11 @@
         "command": "cursorgun.addCursorsAtChar",
         "key": "alt+f",
         "when": "editorTextFocus"
+      },
+      {
+        "command": "cursorgun.addCursorsInsideBrackets",
+        "key": "alt+i",
+        "when": "editorTextFocus"
       }
     ]
   },
