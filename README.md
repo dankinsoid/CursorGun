@@ -4,8 +4,9 @@ A VSCode extension that provides powerful multiple cursor capabilities with intu
 
 ## Features
 
-### Add Cursors by Pattern
+### Add Cursors and Selections by Pattern
 - **Add Cursors at Regex Matches** (`Alt+/`): Add cursors at all matches of a regex pattern
+- **Select All Regex Matches** (`Alt+Shift+/`): Create selections of all regex pattern matches
 - **Add Cursors at Character** (`Alt+F`): Add cursors at all occurrences of a specific character
 
 ### Smart Cursor Placement

@@ -249,8 +249,82 @@ export function activate(context: vscode.ExtensionContext) {
         }
     });
 
+    // Select all regex matches
+    let selectAtRegex = vscode.commands.registerCommand('cursorgun.selectAtRegex', async () => {
+        const editor = vscode.window.activeTextEditor;
+        if (!editor) return;
+
+        const inputBox = vscode.window.createInputBox();
+        inputBox.prompt = "Enter regex pattern";
+        inputBox.ignoreFocusOut = true;
+        
+        // Update previews as user types
+        inputBox.onDidChangeValue(pattern => {
+            try {
+                if (!pattern) {
+                    editor.setDecorations(cursorPreviewDecoration, []);
+                    return;
+                }
+
+                const regex = new RegExp(pattern, 'g');
+                const text = editor.document.getText(editor.selection) || editor.document.getText();
+                const ranges: vscode.Range[] = [];
+                const startOffset = editor.selection.isEmpty ? 0 : editor.document.offsetAt(editor.selection.start);
+                
+                let match;
+                while ((match = regex.exec(text)) !== null) {
+                    const startPos = editor.document.positionAt(startOffset + match.index);
+                    const endPos = editor.document.positionAt(startOffset + match.index + match[0].length);
+                    ranges.push(new vscode.Range(startPos, endPos));
+                }
+
+                editor.setDecorations(cursorPreviewDecoration, ranges);
+            } catch (e) {
+                // Invalid regex - clear previews
+                editor.setDecorations(cursorPreviewDecoration, []);
+            }
+        });
+
+        // Handle accept/cancel
+        const pattern = await new Promise<string | undefined>(resolve => {
+            inputBox.onDidAccept(() => {
+                const value = inputBox.value;
+                inputBox.hide();
+                resolve(value);
+            });
+            inputBox.onDidHide(() => resolve(undefined));
+            inputBox.show();
+        });
+
+        // Clear previews
+        editor.setDecorations(cursorPreviewDecoration, []);
+        
+        if (!pattern) return;
+
+        try {
+            const regex = new RegExp(pattern, 'g');
+            const text = editor.document.getText(editor.selection) || editor.document.getText();
+            const selections: vscode.Selection[] = [];
+            const startOffset = editor.selection.isEmpty ? 0 : editor.document.offsetAt(editor.selection.start);
+            
+            let match;
+            while ((match = regex.exec(text)) !== null) {
+                const startPos = editor.document.positionAt(startOffset + match.index);
+                const endPos = editor.document.positionAt(startOffset + match.index + match[0].length);
+                selections.push(new vscode.Selection(startPos, endPos));
+            }
+
+            if (selections.length > 0) {
+                editor.selections = selections;
+            }
+        } catch (e) {
+            vscode.window.showErrorMessage('Invalid regex pattern');
+        }
+    });
+
     context.subscriptions.push(
         addCursorsAtRegex,
+        selectAtRegex,
         addCursorsAtChar,
         addCursorsAroundWord,
         addCursorsInsideBrackets,

@@ -18,6 +18,10 @@
         "title": "CursorGun: Add Cursors at Regex Matches"
       },
       {
+        "command": "cursorgun.selectAtRegex",
+        "title": "CursorGun: Select All Regex Matches"
+      },
+      {
         "command": "cursorgun.addCursorsAtChar",
         "title": "CursorGun: Add Cursors at Character"
       },
@@ -42,6 +46,11 @@
       {
         "command": "cursorgun.addCursorsAtRegex",
         "key": "alt+/",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "cursorgun.selectAtRegex",
+        "key": "alt+shift+/",
         "when": "editorTextFocus"
       },
       {
