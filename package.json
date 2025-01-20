@@ -4,6 +4,10 @@
   "description": "Effortlessly insert multiple cursors",
   "version": "0.0.1",
   "icon": "cursor-gun-icon-v6.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/cursorgun.git"
+  },
   "engines": {
     "vscode": "^1.96.0"
   },
