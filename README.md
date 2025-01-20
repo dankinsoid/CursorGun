@@ -1,17 +1,17 @@
 # Cursor Gun
 
-A VSCode extension that provides powerful multiple cursor capabilities with intuitive commands.
+A VSCode extension that provides powerful multiple cursor capabilities with intuitive keyboard shortcuts.
 
 ## Features
 
-### Add Cursors and Selections by Pattern
+### Pattern-Based Cursors and Selections
 - **Add Cursors at Regex Matches** (`Alt+/`): Add cursors at all matches of a regex pattern
 - **Select All Regex Matches** (`Alt+Shift+/`): Create selections of all regex pattern matches
-- **Add Cursors at Character** (`Alt+F`): Add cursors at all occurrences of a specific character
+- **Add Cursors at Character** (`Alt+f`): Add cursors at all occurrences of a specific character
 
 ### Smart Cursor Placement
 - **Add Cursors Around Word**: Add cursors at the start and end of the current word
-- **Add Cursors Inside Brackets**: Add cursors inside the nearest brackets/quotes
+- **Add Cursors Inside Brackets** (`Alt+i`): Add cursors inside the nearest brackets/quotes
 - **Add Cursors Around Brackets**: Add cursors around the nearest brackets/quotes
 
 ### Selection Scope
@@ -29,64 +29,45 @@ Install this extension from the VSCode Marketplace:
 
 ## Usage Examples
 
-1. Add cursors at all occurrences of a pattern:
+1. Add cursors at regex matches:
    - Press `Alt+/`
    - Type your regex pattern (e.g., "console.log")
-   - Press Enter
+   - Press Enter to confirm
+   - Live preview shows where cursors will be placed
 
-2. Add cursors around the current word:
-   - Place cursor inside a word
-   - Run "CursorGun: Add Cursors Around Word" from command palette
+2. Select all regex matches:
+   - Press `Alt+Shift+/`
+   - Type your regex pattern
+   - Press Enter to create selections
+   - Live preview shows matches as you type
 
-3. Add cursors inside brackets:
-   - Place cursor inside brackets/quotes
-   - Run "CursorGun: Add Cursors Inside Brackets" from command palette
+3. Add cursors at character matches:
+   - Press `Alt+f`
+   - Type any single character
+   - Cursors are added at all occurrences
 
-## Commands
+4. Add cursors inside brackets:
+   - Place cursor inside any brackets/quotes: (), [], {}, "", '', ``
+   - Press `Alt+i`
+   - Cursors are added after opening and before closing brackets
 
-### Basic Usage
-- `mc` + command: Create multiple cursors
-- `ms` + command: Create multiple selections
-- All commands work within selected text when there's an active selection
+## Supported Commands
 
-### Available Commands
-- `mc/` + search: Add cursors at all occurrences of search regex.
-- `mcf`x, `mcF`x: Add cursors at all occurrences of character x.
-- `mcw`, `mcW`, `mcb`, `mcB`: Add cursors at words start.
-- `mce`, `mcE`: Add cursors at words end.
-- `mcaw`: Around word
-- `mca` + bracket: Around bracket, like `mca(`/`mcab`, `mca{`/`mcaB`, `mca"`, etc
-- `mci` + bracket: Inside bracket, like `mci(`/`mcib`, `mci{`/`mciB`, `mci"`, etc 
-- `mcaa`/`mcia`: any bracket
+All commands can be run from the Command Palette (`Ctrl+Shift+P` or `Cmd+Shift+P`):
 
-### Cursor Management
-- `mcc`: Add or remove a cursor highlight at the current position (preview mode)
-- `mcr`: Convert cursor highlights to active editing cursors
-- `mcd`: Remove all cursors and highlights
-- `mcia`: Place cursors inside any brackets or quotes ((), [], {}, "", '', ``)
-- `mcaa`: Place cursors around any brackets or quotes
-- `mcaw`: Add cursors at word boundaries (at the start and end of current word)
+- `CursorGun: Add Cursors at Regex Matches`
+- `CursorGun: Select All Regex Matches`
+- `CursorGun: Add Cursors at Character`
+- `CursorGun: Add Cursors at Word Start`
+- `CursorGun: Add Cursors Around Word`
+- `CursorGun: Add Cursors Inside Brackets`
+- `CursorGun: Add Cursors Around Brackets`
 
-The `mcia` and `mcaa` commands automatically find the nearest matching pair of delimiters around the cursor, handling proper nesting and matching of brackets/quotes.
+## Keyboard Shortcuts
 
-## Examples
+- `Alt+/`: Add cursors at regex matches
+- `Alt+Shift+/`: Select all regex matches
+- `Alt+f`: Add cursors at character matches
+- `Alt+i`: Add cursors inside brackets
 
-1. Select all occurrences of "print":
-   ```
-   ms/print<Enter>
-   ```
-
-2. Create cursors at each word start in selection:
-   ```
-   msw
-   ```
-
-3. Add cursors at specific positions:
-   1. Move cursor to desired position
-   2. Type `mcc` to add a cursor highlight
-   3. Repeat for more positions
-   4. Type `mcr` to convert highlights into editing cursors
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+Additional shortcuts can be configured in VSCode's Keyboard Shortcuts settings.
