@@ -332,7 +332,7 @@ export function activate(context: vscode.ExtensionContext) {
     );
 
     // Display a welcome message
-    vscode.window.showInformationMessage('CursorGun is now active!');
+    vscode.window.showInformationMessage('Cursor Gun is now active!');
 }
 
 // This method is called when your extension is deactivated

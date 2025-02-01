@@ -55,13 +55,13 @@ Install this extension from the VSCode Marketplace:
 
 All commands can be run from the Command Palette (`Ctrl+Shift+P` or `Cmd+Shift+P`):
 
-- `CursorGun: Add Cursors at Regex Matches`
-- `CursorGun: Select All Regex Matches`
-- `CursorGun: Add Cursors at Character`
-- `CursorGun: Add Cursors at Word Start`
-- `CursorGun: Add Cursors Around Word`
-- `CursorGun: Add Cursors Inside Brackets`
-- `CursorGun: Add Cursors Around Brackets`
+- `Cursor Gun: Add Cursors at Regex Matches`
+- `Cursor Gun: Select All Regex Matches`
+- `Cursor Gun: Add Cursors at Character`
+- `Cursor Gun: Add Cursors at Word Start`
+- `Cursor Gun: Add Cursors Around Word`
+- `Cursor Gun: Add Cursors Inside Brackets`
+- `Cursor Gun: Add Cursors Around Brackets`
 
 ## Keyboard Shortcuts
 

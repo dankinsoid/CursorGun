@@ -1,8 +1,8 @@
 {
   "name": "cursorgun",
-  "displayName": "CursorGun",
+  "displayName": "Cursor Gun",
   "description": "Effortlessly insert multiple cursors",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "dankinsoid",
   "icon": "cursor-gun-icon-v6.png",
   "repository": {
@@ -22,31 +22,31 @@
     "commands": [
       {
         "command": "cursorgun.addCursorsAtRegex",
-        "title": "CursorGun: Add Cursors at Regex Matches"
+        "title": "Cursor Gun: Add Cursors at Regex Matches"
       },
       {
         "command": "cursorgun.selectAtRegex",
-        "title": "CursorGun: Select All Regex Matches"
+        "title": "Cursor Gun: Select All Regex Matches"
       },
       {
         "command": "cursorgun.addCursorsAtChar",
-        "title": "CursorGun: Add Cursors at Character"
+        "title": "Cursor Gun: Add Cursors at Character"
       },
       {
         "command": "cursorgun.addCursorsAtWordStart",
-        "title": "CursorGun: Add Cursors at Word Start"
+        "title": "Cursor Gun: Add Cursors at Word Start"
       },
       {
         "command": "cursorgun.addCursorsAroundWord",
-        "title": "CursorGun: Add Cursors Around Word"
+        "title": "Cursor Gun: Add Cursors Around Word"
       },
       {
         "command": "cursorgun.addCursorsInsideBrackets",
-        "title": "CursorGun: Add Cursors Inside Brackets"
+        "title": "Cursor Gun: Add Cursors Inside Brackets"
       },
       {
         "command": "cursorgun.addCursorsAroundBrackets",
-        "title": "CursorGun: Add Cursors Around Brackets"
+        "title": "Cursor Gun: Add Cursors Around Brackets"
       }
     ],
     "keybindings": [
